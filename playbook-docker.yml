@@ -1,0 +1,19 @@
+---
+- name: install docker and pip by using items
+  hosts: node-2
+  tasks:
+    - name: install docker by items
+      shell: "{{item}}"
+      with_items:
+        - curl -fsSL https://get.docker.com -o install-docker.sh
+        - sh install-docker.sh
+
+    - name: install pip 
+      apt:
+        name: python3-pip
+        state: present
+        update_cache: yes
+
+    - name: intragate with docker with pip
+      apt:
+        name: python3-docker 
