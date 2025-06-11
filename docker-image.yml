@@ -3,6 +3,7 @@
   hosts: node-2
   tasks:
     - name: create image
-      docker_container:
-        name: mynod
-        image: node
+      docker_image:
+        name: nodejs
+        source: pull
+
