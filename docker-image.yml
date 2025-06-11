@@ -1,9 +1,17 @@
----
 - name: create the docker image by ansible
   hosts: node-2
+  become: true
   tasks:
-    - name: create image
+
+    - name: pull node image
       docker_image:
-        name: nodejs
+        name: node
         source: pull
 
+    - name: create node container
+      docker_container:
+        name: nodejs
+        image: node
+        state: started
+        ports:
+          - "3000:3000"
