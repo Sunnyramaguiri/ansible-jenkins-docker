@@ -5,4 +5,4 @@
     - name: create image
       docker_container:
         name: mynod
-        image: nodejs
+        image: nodejs:latest
