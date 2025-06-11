@@ -1,0 +1,8 @@
+---
+- name: create the docker image by ansible
+  hosts: node-2
+  tasks:
+    - name: create image
+      docker_container:
+        name: mynod
+        image: nodejs
