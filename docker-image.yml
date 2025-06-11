@@ -6,5 +6,5 @@
   tasks:
     - name: pull official Node.js image from Docker Hub
       docker_image:
-        name: node
+        name: mysql
         source: pull
